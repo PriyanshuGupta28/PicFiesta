@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@ant-design/pro-components": "^2.6.43",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
