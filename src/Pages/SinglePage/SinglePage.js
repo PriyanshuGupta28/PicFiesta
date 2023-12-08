@@ -26,7 +26,7 @@ const SinglePage = () => {
   return (
     <div>
       {data?.map((e) => (
-        <img src={e?.largeImageURL} width={"100%"} alt="img" />
+        <img src={e?.largeImageURL} width={"%"} alt="img" />
       ))}
     </div>
   );

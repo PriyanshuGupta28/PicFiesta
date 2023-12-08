@@ -1,101 +1,60 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./Home.css";
-import {
-  DownloadOutlined,
-  RotateLeftOutlined,
-  RotateRightOutlined,
-  SwapOutlined,
-  ZoomInOutlined,
-  ZoomOutOutlined,
-} from "@ant-design/icons";
-import { Button, Image, Space } from "antd";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import SingleImage from "../../Components/SingleImage/SingleImage";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
-  const fecthData = async () => {
+  const [page, setPage] = useState(1);
+
+  const fetchData = async () => {
     try {
-      const data = await axios.get(
-        "https://pixabay.com/api/?key=41123393-d488d28859f6869a5072a3240&q=yellow+flowers&image_type=photo$&per_page=50"
+      const response = await axios.get(
+        `https://pixabay.com/api/?key=41123393-d488d28859f6869a5072a3240&q=&image_type=all$&per_page=20&page=${page}`
       );
-      setData(data?.data?.hits);
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    } finally {
+      setData((prevData) => [...prevData, ...response?.data?.hits]);
+      setPage((prevPage) => prevPage + 1);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
   };
 
   useEffect(() => {
-    fecthData();
-  }, []);
+    fetchData();
+  }, [page]);
 
-  const onDownload = (url, imageName) => {
-    axios
-      .get(url, { responseType: "blob" })
-      .then((response) => {
-        const blob = response.data;
-        const downloadLink = document.createElement("a");
-        downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = imageName || "image_picfiesta.png";
+  const handleScroll = () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const windowHeight =
+      "innerHeight" in window
+        ? window.innerHeight
+        : document.documentElement.offsetHeight;
 
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
+    const body = document.body;
+    const html = document.documentElement;
+    const docHeight = Math.max(body.scrollHeight);
 
-        document.body.removeChild(downloadLink);
-        URL.revokeObjectURL(downloadLink.href);
-      })
-      .catch((error) => {
-        console.error("Error downloading image:", error);
-      });
+    const windowBottom = windowHeight + scrollY;
+    if (windowBottom >= docHeight - 1) {
+      fetchData();
+    }
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
-    <div>
-      {data?.map((e) => (
-        <div>
-          <Image
-            width={200}
-            src={e?.largeImageURL}
-            preview={{
-              toolbarRender: (
-                _,
-                {
-                  transform: { scale },
-                  actions: {
-                    onFlipY,
-                    onFlipX,
-                    onRotateLeft,
-                    onRotateRight,
-                    onZoomOut,
-                    onZoomIn,
-                  },
-                }
-              ) => (
-                <Space size={12} className="toolbar-wrapper">
-                  <DownloadOutlined
-                    onClick={() =>
-                      onDownload(e?.largeImageURL, "image_picfiesta")
-                    }
-                  />
-                  <SwapOutlined rotate={90} onClick={onFlipY} />
-                  <SwapOutlined onClick={onFlipX} />
-                  <RotateLeftOutlined onClick={onRotateLeft} />
-                  <RotateRightOutlined onClick={onRotateRight} />
-                  <ZoomOutOutlined disabled={scale === 1} onClick={onZoomOut} />
-                  <ZoomInOutlined disabled={scale === 50} onClick={onZoomIn} />
-                </Space>
-              ),
-            }}
-          />
-          <Button type="primary" onClick={() => navigate(`./home/${e?.id}`)}>
-            More Info
-          </Button>
-        </div>
-      ))}
-    </div>
+    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 3, 900: 4 }}>
+      <Masonry columnsCount={4} gutter={20}>
+        {data.map((e) => (
+          <SingleImage key={e?.id} data={e} />
+        ))}
+      </Masonry>
+    </ResponsiveMasonry>
   );
 };
 
