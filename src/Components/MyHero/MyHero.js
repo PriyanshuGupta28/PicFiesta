@@ -4,9 +4,12 @@ import "./MyHero.css";
 const MyHero = () => {
   const firstImg =
     "https://pixabay.com/get/g289b6827961331e7a5c9fa3f0598cb6b846fb29a7661109055fcefac61564371a47ece249ed94370863a9de862113012.jpg";
-  const secondImg = "";
-  const thirdImg = "";
-  const fourthImg = "";
+  const secondImg =
+    "https://pixabay.com/get/g4681ce952a52fd107bbf2016f14142af4fa382ee5a4c2418f14cb01c8a9dc4449c7d1e89b88cd8f81332295ec7e7dc10.jpg";
+  const thirdImg =
+    "https://pixabay.com/get/g34559c9e587b9082bc94a0d9f93f8294df04e32bd0087599023cba2f353c137c8d45b6b1f09cc7e2bd47f995ec7e2a3f.jpg";
+  const fourthImg =
+    "https://pixabay.com/get/gb5be89dc465d58a9c11011397eef08b072d1a52bd6c90ed5d7b525ae00cb0f0834106369ecf1054c3b979abc164ae3ce.jpg";
   return (
     <>
       <div className="section-root">
