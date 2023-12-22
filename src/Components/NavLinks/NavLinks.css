@@ -19,9 +19,10 @@
 }
 
 .link a:hover {
-  color: purple;
+  color: rgb(10, 96, 195);
 }
 .filter {
+  font-family: Poppins;
   display: inline-flex;
   padding: 0.5rem 1.5rem;
   justify-content: center;

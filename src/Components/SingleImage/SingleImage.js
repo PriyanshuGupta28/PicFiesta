@@ -31,6 +31,8 @@ const SingleImage = ({ data }) => {
         console.error("Error downloading image:", error);
       });
   };
+
+  console.log(data, "SingleImage");
   return (
     <div>
       <Image
