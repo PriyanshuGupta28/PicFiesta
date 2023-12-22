@@ -3,13 +3,13 @@ import "./MyHero.css";
 
 const MyHero = () => {
   const firstImg =
-    "https://pixabay.com/get/g289b6827961331e7a5c9fa3f0598cb6b846fb29a7661109055fcefac61564371a47ece249ed94370863a9de862113012.jpg";
+    "https://cdn.pixabay.com/photo/2014/05/22/16/52/pyrenees-351266_1280.jpg";
   const secondImg =
-    "https://pixabay.com/get/g4681ce952a52fd107bbf2016f14142af4fa382ee5a4c2418f14cb01c8a9dc4449c7d1e89b88cd8f81332295ec7e7dc10.jpg";
+    "https://pixabay.com/get/g626b2f9949730dd8ab3fc6b2198b24d3f2acddb4597f0f498e0a9df86ed49a361c0945d0e896ef40acec066048f91f03cecdd76847e7e1246bacdc845ea85d85_1280.jpg";
   const thirdImg =
-    "https://pixabay.com/get/g34559c9e587b9082bc94a0d9f93f8294df04e32bd0087599023cba2f353c137c8d45b6b1f09cc7e2bd47f995ec7e2a3f.jpg";
+    "https://pixabay.com/get/g2433c8631b6894de9c27796a7266d342c77c82bd8d0385447a0faeab407f11c7e0136974840d4dd6d8692c8291904cea5aa3584dbaabae5fa99f734267accad1_1280.jpg";
   const fourthImg =
-    "https://pixabay.com/get/gb5be89dc465d58a9c11011397eef08b072d1a52bd6c90ed5d7b525ae00cb0f0834106369ecf1054c3b979abc164ae3ce.jpg";
+    "https://pixabay.com/get/gdc6efe1add51da281129d935e0977466bb0b29e833e9d4f04fa095a5f1538d895799242a90b873eeb727ee53736c84691aae606a38411115ef59f1a920523787_1280.jpg";
   return (
     <>
       <div className="section-root">
