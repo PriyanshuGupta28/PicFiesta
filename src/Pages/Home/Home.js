@@ -6,6 +6,8 @@ import "./Home.css";
 import MyHero from "../../Components/MyHero/MyHero";
 import NavLinks from "../../Components/NavLinks/NavLinks";
 import Loader from "../../Components/Loader/Loader";
+import useAxios from "../../CustomHooks/useAxios";
+import Trasition from "../../Trasition/Trasition";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -71,7 +73,7 @@ const Home = () => {
             <ResponsiveMasonry
               columnsCountBreakPoints={{ 350: 1, 750: 3, 900: 4 }}
             >
-              <Masonry columnsCount={4} gutter={20}>
+              <Masonry columnsCount={4} gutter={16}>
                 {data.map((e) => (
                   <SingleImage key={e?.id} data={e} />
                 ))}
@@ -84,4 +86,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Trasition(Home);

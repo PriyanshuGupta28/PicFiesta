@@ -1,0 +1,11 @@
+.illustrations-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.illustrations-masonry {
+  width: 95%;
+  margin: auto;
+}

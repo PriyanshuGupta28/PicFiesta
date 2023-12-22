@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import SingleImage from "../../Components/SingleImage/SingleImage";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import axios from "axios";
+import MyHero from "../../Components/MyHero/MyHero";
+import "./Photos.css";
+import NavLinks from "../../Components/NavLinks/NavLinks";
+import Trasition from "../../Trasition/Trasition";
 
 const Photos = () => {
   const [data, setData] = useState([]);
@@ -42,18 +46,26 @@ const Photos = () => {
     window.addEventListener("scroll", handelInfiniteScroll);
     return () => window.removeEventListener("scroll", handelInfiniteScroll);
   }, []);
+
   return (
-    <div>
-      {" "}
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 3, 900: 4 }}>
-        <Masonry columnsCount={4} gutter={20}>
-          {data.map((e) => (
-            <SingleImage key={e?.id} data={e} />
-          ))}
-        </Masonry>
-      </ResponsiveMasonry>
-    </div>
+    <>
+      <MyHero />
+      <NavLinks />
+      <div className="photos-root">
+        <div className="photos-masonry">
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 1, 750: 3, 900: 4 }}
+          >
+            <Masonry columnsCount={4} gutter={20}>
+              {data.map((e) => (
+                <SingleImage key={e?.id} data={e} />
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default Photos;
+export default Trasition(Photos);
