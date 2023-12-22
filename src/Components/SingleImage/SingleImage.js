@@ -8,7 +8,7 @@ import {
   ZoomInOutlined,
   ZoomOutOutlined,
 } from "@ant-design/icons";
-import { Image, Space } from "antd";
+import { Badge, Image, Space } from "antd";
 import "./SingleImage.css";
 
 const SingleImage = ({ data }) => {

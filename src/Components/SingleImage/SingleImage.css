@@ -5,7 +5,10 @@
   padding: 0px 24px;
   color: #fff;
   font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background: rgba(142, 159, 185, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(142, 159, 185, 0.25);
   border-radius: 100px;
   transform: translateX(-50%);
 }
@@ -22,4 +25,14 @@
 
 .toolbar-wrapper .anticon:hover {
   opacity: 0.3;
+}
+
+.preview img {
+  border-radius: 1rem;
+}
+
+/* SingleImage.css */
+
+.hover-effect:hover {
+  border-radius: 1rem;
 }

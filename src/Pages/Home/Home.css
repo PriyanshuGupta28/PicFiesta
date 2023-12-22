@@ -23,3 +23,15 @@
 .toolbar-wrapper .anticon:hover {
   opacity: 0.3;
 }
+
+.home-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.masonry-container {
+  width: 95%;
+  margin: auto;
+}

@@ -1,0 +1,101 @@
+/* Navbar.css */
+
+.nav-root {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(17.5px);
+  color: #fff; /* Set your desired text color */
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  height: 4.0625rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.custom-navbar {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  background-color: transparent;
+}
+
+.search-input.expanded {
+  width: 200px; /* Adjust the width as needed */
+}
+
+.last-nav {
+  margin-right: 1rem;
+}
+
+.logo {
+  width: 2.63044rem;
+  height: 2.63044rem;
+  flex-shrink: 0;
+}
+
+.logoText {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.15288rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.08069rem;
+  margin-left: 1rem;
+}
+
+.nav-login {
+  display: inline-flex;
+  padding: 0.5rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 6.25rem;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.nav-signup {
+  display: inline-flex;
+  padding: 0.5rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 6.25rem;
+  background: #fff;
+  color: #000000;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links div {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.nav-links div:hover {
+  transform: translateY(-2px);
+}
