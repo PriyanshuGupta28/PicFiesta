@@ -1,0 +1,27 @@
+.login-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://wallpapershome.com/images/pages/pic_h/11473.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.login-wraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(17.5px);
+  color: #fff;
+  /* Set your desired text color */
+  padding: 10rem 3rem;
+  border-top-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+}

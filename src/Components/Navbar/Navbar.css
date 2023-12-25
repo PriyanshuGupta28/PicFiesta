@@ -70,7 +70,8 @@
   align-items: center;
   gap: 0.625rem;
   border-radius: 6.25rem;
-  border: 1px solid #fff;
+  background: #fff;
+  margin-left: 1rem;
   cursor: pointer;
 }
 
@@ -81,10 +82,18 @@
   align-items: center;
   gap: 0.625rem;
   border-radius: 6.25rem;
-  background: #fff;
-  color: #000000;
-  margin-left: 1rem;
+  border: 1px solid #fff;
   cursor: pointer;
+}
+
+.login-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .nav-links {
@@ -98,4 +107,15 @@
 }
 .nav-links div:hover {
   transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
 }

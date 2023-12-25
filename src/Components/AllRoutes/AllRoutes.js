@@ -10,6 +10,8 @@ import Illustrations from "../../Pages/Illustrations/Illustrations";
 import Vectors from "../../Pages/Vectors/Vectors";
 import Videos from "../../Pages/Videos/Videos";
 import { AnimatePresence } from "framer-motion";
+import Login from "../../Pages/Login/Login";
+import Signup from "../../Pages/Signup/Signup";
 
 const AllRoutes = () => {
   const location = useLocation();
@@ -25,6 +27,8 @@ const AllRoutes = () => {
           <Route exact path="/illustrations" element={<Illustrations />} />
           <Route exact path="/vectors" element={<Vectors />} />
           <Route exact path="/videos" element={<Videos />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
           <Route exact path="*" element={<PageNotFound />} />
         </Routes>
       </AnimatePresence>

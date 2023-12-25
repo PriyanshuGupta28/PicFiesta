@@ -9,14 +9,21 @@ import { applyMiddleware, compose, createStore } from "redux";
 import { thunk } from "redux-thunk";
 import { reducer } from "./Redux/reducer";
 import { Provider } from "react-redux";
-
+import { ClerkProvider } from "@clerk/clerk-react";
 const store = createStore(reducer, compose(applyMiddleware(thunk)));
 
+const publishableKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+
+if (!publishableKey) {
+  throw new Error("Missing Publishable Key");
+}
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ClerkProvider publishableKey={publishableKey}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ClerkProvider>
   </Provider>,
   document.getElementById("root")
 );

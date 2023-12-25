@@ -21,6 +21,7 @@
 .link a:hover {
   color: rgb(10, 96, 195);
 }
+
 .filter {
   font-family: Poppins;
   display: inline-flex;
@@ -36,4 +37,17 @@
   font-weight: 500;
   line-height: normal;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .navlink-root {
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .navlink-root {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }

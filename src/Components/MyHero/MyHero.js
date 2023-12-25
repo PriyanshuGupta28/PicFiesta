@@ -5,11 +5,12 @@ const MyHero = () => {
   const firstImg =
     "https://cdn.pixabay.com/photo/2014/05/22/16/52/pyrenees-351266_1280.jpg";
   const secondImg =
-    "https://pixabay.com/get/g626b2f9949730dd8ab3fc6b2198b24d3f2acddb4597f0f498e0a9df86ed49a361c0945d0e896ef40acec066048f91f03cecdd76847e7e1246bacdc845ea85d85_1280.jpg";
+    "https://c4.wallpaperflare.com/wallpaper/271/986/465/nature-plants-macro-depth-of-field-wallpaper-preview.jpg";
   const thirdImg =
-    "https://pixabay.com/get/g2433c8631b6894de9c27796a7266d342c77c82bd8d0385447a0faeab407f11c7e0136974840d4dd6d8692c8291904cea5aa3584dbaabae5fa99f734267accad1_1280.jpg";
+    "https://c4.wallpaperflare.com/wallpaper/799/610/330/blue-stars-mountains-starry-night-wallpaper-preview.jpg";
   const fourthImg =
-    "https://pixabay.com/get/gdc6efe1add51da281129d935e0977466bb0b29e833e9d4f04fa095a5f1538d895799242a90b873eeb727ee53736c84691aae606a38411115ef59f1a920523787_1280.jpg";
+    "https://c4.wallpaperflare.com/wallpaper/28/23/751/ultra-hd-8k-resolution-7680x4320-nature-wallpaper-preview.jpg";
+
   return (
     <>
       <div className="section-root">
@@ -23,6 +24,19 @@ const MyHero = () => {
               Illustrations and Much More.
             </div>
             <div className="section-input">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+              >
+                <path
+                  d="M15 4.125C21.0061 4.125 25.875 8.99391 25.875 15C25.875 17.5978 24.9641 19.9829 23.4443 21.8532L30.7955 29.2045C31.2348 29.6439 31.2348 30.3561 30.7955 30.7955C30.3962 31.1949 29.7711 31.2312 29.3307 30.9044L29.2045 30.7955L21.8532 23.4443C19.9829 24.9641 17.5978 25.875 15 25.875C8.99391 25.875 4.125 21.0061 4.125 15C4.125 8.99391 8.99391 4.125 15 4.125ZM15 6.375C10.2365 6.375 6.375 10.2365 6.375 15C6.375 19.7634 10.2365 23.625 15 23.625C19.7634 23.625 23.625 19.7634 23.625 15C23.625 10.2365 19.7634 6.375 15 6.375Z"
+                  fill="black"
+                  fill-opacity="0.25"
+                />
+              </svg>
               <input placeholder="Explore" />
             </div>
           </div>

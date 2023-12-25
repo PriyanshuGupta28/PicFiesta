@@ -1,8 +1,13 @@
 import React from "react";
 import "./Navbar.css"; // Import your custom CSS file for additional styling
 import logoImg from "../../Images/logo.png";
+import { Link } from "react-router-dom";
+import { UserButton, useAuth } from "@clerk/clerk-react";
 
 const Navbar = () => {
+  const { userId } = useAuth();
+  const details = useAuth();
+  console.log(details, "userId");
   return (
     <div className="nav-root">
       <div className="custom-navbar">
@@ -17,10 +22,18 @@ const Navbar = () => {
           <div>Editor’s Pics</div>
           <div>Explore By Theme</div>
         </div>
-        <div className="last-nav">
-          <div className="nav-login">Signup</div>
-          <div className="nav-signup">Login</div>
-        </div>
+        {!userId ? (
+          <div className="last-nav">
+            <Link to={"/signup"} className="signup-link">
+              <div className="nav-signup">Signup</div>
+            </Link>
+            <Link className="login-link" to={"/login"}>
+              <div className="nav-login">Login</div>
+            </Link>
+          </div>
+        ) : (
+          <UserButton showName signInUrl="/login" />
+        )}
       </div>
     </div>
   );
