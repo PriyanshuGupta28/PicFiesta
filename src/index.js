@@ -17,6 +17,7 @@ const publishableKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 if (!publishableKey) {
   throw new Error("Missing Publishable Key");
 }
+
 ReactDOM.render(
   <Provider store={store}>
     <ClerkProvider publishableKey={publishableKey}>
