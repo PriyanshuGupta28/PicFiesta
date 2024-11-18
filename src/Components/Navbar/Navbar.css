@@ -1,5 +1,3 @@
-/* Navbar.css */
-
 .nav-root {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(17.5px);
@@ -38,7 +36,7 @@
 }
 
 .search-input.expanded {
-  width: 200px; /* Adjust the width as needed */
+  width: 200px;
 }
 
 .last-nav {
@@ -75,25 +73,9 @@
   cursor: pointer;
 }
 
-.nav-signup {
-  display: inline-flex;
-  padding: 0.5rem 1.5rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  border-radius: 6.25rem;
-  border: 1px solid #fff;
-  cursor: pointer;
-}
-
 .login-link {
   text-decoration: none;
   color: #000000;
-}
-
-.signup-link {
-  text-decoration: none;
-  color: #fff;
 }
 
 .nav-links {
@@ -108,14 +90,100 @@
 .nav-links div:hover {
   transform: translateY(-2px);
 }
+.hamburger {
+  display: none;
+}
+.picfiestamobileLogo {
+  display: none;
+}
 
 @media only screen and (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+  .picfiestamobileLogo {
+    display: flex;
+  }
   .nav-links {
     display: none;
   }
+  .last-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoText {
+    display: none;
+  }
+
+  .nav-login {
+    display: flex;
+    width: 3.5625rem;
+    padding: 0.34544rem 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 6.25rem;
+    background: #fff;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  .nav-signup {
+    display: flex;
+    padding: 0.34544rem 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.43175rem;
+    border-radius: 6.25rem;
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+  .hamburger {
+    display: flex;
+  }
 }
-@media only screen and (max-width: 480px) {
+
+@media only screen and (max-width: 1200px) {
+  .logo {
+    display: none;
+  }
+  .picfiestamobileLogo {
+    display: flex;
+  }
   .nav-links {
     display: none;
+  }
+  .logoText {
+    display: none;
+  }
+  .last-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-login {
+    display: flex;
+    width: 3.5625rem;
+    padding: 0.34544rem 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 6.25rem;
+    background: #fff;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  .nav-signup {
+    display: flex;
+    padding: 0.34544rem 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.43175rem;
+    border-radius: 6.25rem;
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+  .hamburger {
+    display: flex;
   }
 }
