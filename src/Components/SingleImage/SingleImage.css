@@ -16,6 +16,7 @@
 .toolbar-wrapper .anticon {
   padding: 12px;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .toolbar-wrapper .anticon[disabled] {
@@ -25,10 +26,6 @@
 
 .toolbar-wrapper .anticon:hover {
   opacity: 0.3;
-}
-
-.preview img {
-  border-radius: 1rem;
 }
 
 /* SingleImage.css */
