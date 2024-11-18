@@ -11,6 +11,7 @@
     "axios": "^1.6.2",
     "firebase": "^10.7.1",
     "framer-motion": "^10.16.16",
+    "hamburger-react": "^2.5.0",
     "rc-queue-anim": "^2.0.0",
     "rc-tween-one": "^3.0.6",
     "react": "^18.2.0",
