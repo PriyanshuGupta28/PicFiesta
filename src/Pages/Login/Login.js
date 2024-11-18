@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div className="login-root">
       <div className="login-wraper">
-        <SignIn />
+        <SignIn signUpUrl="/signup" />
       </div>
     </div>
   );
