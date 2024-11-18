@@ -18,17 +18,25 @@ const NavLinks = () => {
   ];
 
   const handleClick = (e) => {
-    dispatch({
-      type: NAVLINKCURRENT,
-      payload: e?.title,
-    });
+    if (e?.link === "/") {
+      dispatch({
+        type: NAVLINKCURRENT,
+        payload: "/all",
+      });
+    } else {
+      dispatch({
+        type: NAVLINKCURRENT,
+        payload: e?.link,
+      });
+    }
   };
 
   return (
     <div className="navlink-root">
       {links?.map((e) => (
-        <div className="link">
+        <div className="link" key={e.title}>
           <Link
+            key={e?.title}
             to={e?.link}
             onClick={() => handleClick(e)}
             style={{
