@@ -1,37 +1,55 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import SinglePage from "../../Pages/SinglePage/SinglePage";
-import Home from "../../Pages/Home/Home";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Contactus from "../../Pages/Contactus/Contactus";
-import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
-import Navbar from "../Navbar/Navbar";
-import Photos from "../../Pages/Photos/Photos";
+import Home from "../../Pages/Home/Home";
 import Illustrations from "../../Pages/Illustrations/Illustrations";
+import Login from "../../Pages/Login/Login";
+import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
+import Photos from "../../Pages/Photos/Photos";
+import Signup from "../../Pages/Signup/Signup";
+import SinglePage from "../../Pages/SinglePage/SinglePage";
 import Vectors from "../../Pages/Vectors/Vectors";
 import Videos from "../../Pages/Videos/Videos";
-import { AnimatePresence } from "framer-motion";
-import Login from "../../Pages/Login/Login";
-import Signup from "../../Pages/Signup/Signup";
+import SearchPage from "../../Pages/SearchPage/SearchPage";
 
 const AllRoutes = () => {
   const location = useLocation();
   return (
     <>
-      <AnimatePresence mode="wait">
-        <Navbar />
-        <Routes location={location} key={location?.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/contactus" element={<Contactus />} />
-          <Route exact path="/home/:id" element={<SinglePage />} />
-          <Route exact path="/photos" element={<Photos />} />
-          <Route exact path="/illustrations" element={<Illustrations />} />
-          <Route exact path="/vectors" element={<Vectors />} />
-          <Route exact path="/videos" element={<Videos />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="*" element={<PageNotFound />} />
-        </Routes>
-      </AnimatePresence>
+      <Routes location={location} key={location?.pathname}>
+        <Route path="/" element={<Home />}>
+          <Route exact path="photos" element={<Photos />} />
+          <Route exact path="illustrations" element={<Illustrations />} />
+          <Route exact path="vectors" element={<Vectors />} />
+          <Route exact path="videos" element={<Videos />} />
+        </Route>
+        <Route path="/contactus" element={<Contactus />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route path="/all" element={<SearchPage />} />
+        {/* Routes for search pages */}
+        <Route path="/all/search" element={<SearchPage />} />
+        <Route path="/photos/search" element={<SearchPage />} />
+        <Route path="/illustrations/search" element={<SearchPage />} />
+        <Route path="/vectors/search" element={<SearchPage />} />
+        <Route path="/videos/search" element={<SearchPage />} />
+        {/* Routes for single pages */}
+        <Route exact path="/all/:id" element={<SinglePage />} />
+        <Route exact path="/photos/:id" element={<SinglePage />} />
+        <Route exact path="/illustrations/:id" element={<SinglePage />} />
+        <Route exact path="/vectors/:id" element={<SinglePage />} />
+        <Route exact path="/videos/:id" element={<Videos />} />
+        {/* Routes for single pages under search */}
+        <Route path="/all/search/:id" element={<SinglePage />} />
+        <Route exact path="photos/search/:id" element={<SinglePage />} />
+        <Route
+          exact
+          path="/illustrations/search/:id"
+          element={<SinglePage />}
+        />
+        <Route exact path="/vectors/search/:id" element={<SinglePage />} />
+        <Route exact path="*" element={<PageNotFound />} />
+      </Routes>
     </>
   );
 };
