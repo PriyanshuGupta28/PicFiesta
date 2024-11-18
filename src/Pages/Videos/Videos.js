@@ -1,7 +1,13 @@
 import React from "react";
-import Trasition from "../../Trasition/Trasition";
 
 const Videos = () => {
+  const heroDetails = {
+    title: "Stunning free stock video footage & clips",
+    description:
+      "Thousands of free stock video clips & footage shared by our talented community.",
+    images: [],
+    bgImage: {},
+  };
   return <div>Videos</div>;
 };
 
