@@ -1,7 +1,7 @@
 import { NAVLINKCURRENT } from "../../Utility/ReduxConstants/NavLinksConstants/NavLinksConstants";
 
 const initState = {
-  currentLink: "Home",
+  currentLink: "/all",
 };
 
 export default (state = initState, action) => {
@@ -9,7 +9,7 @@ export default (state = initState, action) => {
     case NAVLINKCURRENT:
       return {
         ...state,
-        currentLink: action.payload ?? "",
+        currentLink: action.payload,
       };
     default:
       return state;
