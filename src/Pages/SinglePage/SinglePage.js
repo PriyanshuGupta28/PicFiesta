@@ -5,6 +5,8 @@ import axios from "axios";
 
 const SinglePage = () => {
   const [data, setData] = useState([]);
+  const { id } = useParams();
+
   const fecthData = async () => {
     try {
       const data = await axios.get(
@@ -21,12 +23,14 @@ const SinglePage = () => {
   useEffect(() => {
     fecthData();
   }, []);
-  const { id } = useParams();
-  console.log(id);
   return (
     <div>
       {data?.map((e) => (
-        <img src={e?.largeImageURL} width={"%"} alt="img" />
+        <img
+          src={e?.largeImageURL}
+          alt="img"
+          style={{ width: "100%", height: "100%" }}
+        />
       ))}
     </div>
   );
