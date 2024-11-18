@@ -1,11 +1,32 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-const baseURL =
-  "https://pixabay.com/api/?key=41123393-d488d28859f6869a5072a3240&q=mountain&orientation=horizontal&editors_choice=true";
+const useAxios = (url) => {
+  const [data, setData] = useState([]);
+  const [response, setResponse] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-const useAxios = axios.create({
-  baseURL: baseURL,
-});
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(url);
+        setData((prevData) => [...prevData, ...response?.data?.hits]);
+        setResponse(response);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+
+    return () => {};
+  }, [url]);
+
+  return { data, loading, error, response };
+};
 
 export default useAxios;
