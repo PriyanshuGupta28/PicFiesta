@@ -1,37 +1,20 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import SingleImage from "../../Components/SingleImage/SingleImage";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import "./Home.css";
+import React, { Suspense, useEffect, useState } from "react";
 import MyHero from "../../Components/MyHero/MyHero";
 import NavLinks from "../../Components/NavLinks/NavLinks";
-import Loader from "../../Components/Loader/Loader";
 import useAxios from "../../CustomHooks/useAxios";
-import Trasition from "../../Trasition/Trasition";
+import Loader from "../../Components/Loader/Loader";
+import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
+import { Outlet } from "react-router-dom";
+const ReactMasonry = React.lazy(() =>
+  import("../../Components/ReactMasonry/ReactMasonry")
+);
 
 const Home = () => {
-  const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
 
-  const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(
-        `https://pixabay.com/api/?key=41123393-d488d28859f6869a5072a3240&q=mountain&orientation=horizontal&editors_choice=true$&per_page=20&page=${page}`
-      );
-      setData((prevData) => [...prevData, ...response?.data?.hits]);
-    } catch (error) {
-      setLoading(false);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [page]);
+  const { data, loading, error } = useAxios(
+    `https://pixabay.com/api/?key=${pixabayKey}&q=mountain&orientation=horizontal&editors_choice=true$&per_page=20&page=${page}`
+  );
 
   const handelInfiniteScroll = async () => {
     try {
@@ -51,39 +34,23 @@ const Home = () => {
     window.addEventListener("scroll", handelInfiniteScroll);
     return () => window.removeEventListener("scroll", handelInfiniteScroll);
   }, []);
-  const text = "Radha Krishna";
-  const temp = text.split(" ");
-  console.log(temp);
 
-  // console.log(temp.join("+"), "kshfgsdfsdf");
-  console.log(loading, "loading");
-
-  const random = Math.min(Math.floor(Math.random() * 20) + 1, 200);
-  console.log(random);
-
+  const heroDetails = {
+    title: "Where Every Pixel Tells a Story: Explore, Inspire, Create Wonder",
+    description:
+      "We Provide Millions of high quality Stocks, Background, Illustrations and Much More.",
+    images: [data[11]?.largeImageURL],
+  };
   return (
     <>
-      <MyHero />
+      <MyHero heroDetails={heroDetails} />
       <NavLinks />
-      <div className="home-root">
-        <div className="masonry-container">
-          {loading ? (
-            <Loader />
-          ) : (
-            <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 750: 3, 900: 4 }}
-            >
-              <Masonry columnsCount={4} gutter={16}>
-                {data.map((e) => (
-                  <SingleImage key={e?.id} data={e} />
-                ))}
-              </Masonry>
-            </ResponsiveMasonry>
-          )}
-        </div>
-      </div>
+      <Suspense fallback={<Loader />}>
+        <ReactMasonry data={data} loading={loading} error={error} />
+      </Suspense>
+      <Outlet />
     </>
   );
 };
 
-export default Trasition(Home);
+export default Home;
