@@ -5,15 +5,13 @@ import useAxios from "../../CustomHooks/useAxios";
 import Loader from "../../Components/Loader/Loader";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
 import { Outlet, useLocation } from "react-router-dom";
-import ReactMasonry from "../../Components/ReactMasonry/ReactMasonry";
-// const ReactMasonry = React.lazy(() =>
-//   import("../../Components/ReactMasonry/ReactMasonry")
-// );
+const ReactMasonry = React.lazy(() =>
+  import("../../Components/ReactMasonry/ReactMasonry")
+);
 
 const Home = () => {
   const location = useLocation();
   const [page, setPage] = useState(1);
-
   const { data, loading, error } = useAxios(
     `https://pixabay.com/api/?key=${pixabayKey}&q=mountain&orientation=horizontal&editors_choice=true$&per_page=20&page=${page}`
   );
@@ -48,13 +46,15 @@ const Home = () => {
     <>
       <MyHero heroDetails={heroDetails} />
       <NavLinks />
-      {isHome ? (
-        // <Suspense fallback={<Loader />}>
-        <ReactMasonry data={data} loading={loading} error={error} />
-      ) : (
-        // </Suspense>
-        <Outlet />
-      )}
+      <div style={{ marginTop: "1rem" }}>
+        {isHome ? (
+          <Suspense fallback={<Loader />}>
+            <ReactMasonry data={data} loading={loading} error={error} />
+          </Suspense>
+        ) : (
+          <Outlet />
+        )}
+      </div>
     </>
   );
 };
