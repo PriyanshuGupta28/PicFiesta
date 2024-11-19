@@ -6,7 +6,7 @@
   height: 4rem;
   gap: 6.25rem;
   margin-bottom: 1rem;
-  overflow-x: scroll;
+  overflow-x: hidden;
   background-color: white;
 }
 
@@ -44,13 +44,12 @@
 
 @media only screen and (max-width: 768px) {
   .navlink-root {
-    overflow-x: auto;
+    display: none;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .navlink-root {
-    overflow-x: auto;
     white-space: nowrap;
   }
 }
