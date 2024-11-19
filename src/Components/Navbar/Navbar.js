@@ -51,13 +51,26 @@ const Navbar = () => {
       {/* Drawer Component */}
       <Drawer
         placement="right"
-        closeIcon={
-          <Hamburger
-            toggled={isDrawerOpen}
-            toggle={setDrawerOpen}
-            onToggle={toggleDrawer}
-          />
+        // closeIcon={
+        //   <div>
+        //     <Hamburger
+        //       toggled={isDrawerOpen}
+        //       toggle={setDrawerOpen}
+        //       onToggle={toggleDrawer}
+        //     />
+        //   </div>
+        // }
+        title={
+          <div>
+            <Hamburger
+              toggled={isDrawerOpen}
+              toggle={setDrawerOpen}
+              onToggle={toggleDrawer}
+              color="gray"
+            />
+          </div>
         }
+        closable={false}
         onClose={toggleDrawer}
         open={isDrawerOpen}
       >
