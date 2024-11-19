@@ -26,9 +26,10 @@ const AllRoutes = () => {
         <Route path="/contactus" element={<Contactus />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
-        <Route path="/all" element={<SearchPage />} />
+        <Route path="/all" element={<SearchPage />}>
+          <Route path="search" element={<SearchPage />} />
+        </Route>
         {/* Routes for search pages */}
-        <Route path="/all/search" element={<SearchPage />} />
         <Route path="/photos/search" element={<SearchPage />} />
         <Route path="/illustrations/search" element={<SearchPage />} />
         <Route path="/vectors/search" element={<SearchPage />} />
