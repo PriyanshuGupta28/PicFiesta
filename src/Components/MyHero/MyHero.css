@@ -11,7 +11,7 @@
   width: 100%;
   height: 42.4375rem;
   flex-shrink: 0;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   display: flex;
   justify-content: space-around; /* Center content horizontally */
   align-items: center; /* Center content vertically */
