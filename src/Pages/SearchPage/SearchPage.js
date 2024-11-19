@@ -4,21 +4,25 @@ import useAxios from "../../CustomHooks/useAxios";
 import ReactMasonry from "../../Components/ReactMasonry/ReactMasonry";
 import { Flex, Pagination } from "antd";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
+import { useSearchParams } from "react-router-dom";
 
 const SearchPage = () => {
   const searchQuery = useSelector((state) => state.searchQuery.searchQuery);
   const [page, setPage] = useState(1);
   const [queryUrl, setQueryUrl] = useState("");
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q"); // Get the query parameter
+  console.log(query, "query");
 
   // Format query string for the API
-  const modefiledQuery = searchQuery.split(" ").join("+");
+  // const modefiledQuery = query.split(" ").join("+");
 
   // Update query URL whenever the searchQuery or page changes
   useEffect(() => {
     setQueryUrl(
-      `https://pixabay.com/api/?key=${pixabayKey}&q=${modefiledQuery}&page=${page}&per_page=20`
+      `https://pixabay.com/api/?key=${pixabayKey}&q=${query}&page=${page}&per_page=20`
     );
-  }, [modefiledQuery, page]);
+  }, [query, page]);
 
   // Fetch data using the dynamically updated query URL
   const { data, loading, error, response } = useAxios(queryUrl);
@@ -34,7 +38,7 @@ const SearchPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ paddingTop: "5rem" }}>
       {/* Display fetched data in a masonry layout */}
       <ReactMasonry data={data} loading={loading} error={error} />
 
