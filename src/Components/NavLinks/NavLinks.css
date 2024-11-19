@@ -3,8 +3,11 @@
   padding: 0.5rem 0.75rem;
   justify-content: center;
   align-items: center;
+  height: 4rem;
   gap: 6.25rem;
   margin-bottom: 1rem;
+  overflow-x: scroll;
+  background-color: white;
 }
 
 .link a {
