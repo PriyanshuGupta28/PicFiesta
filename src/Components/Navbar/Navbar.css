@@ -108,36 +108,9 @@
   .nav-links {
     display: none;
   }
-  .last-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .logoText {
     display: none;
-  }
-
-  .nav-login {
-    display: flex;
-    width: 3.5625rem;
-    padding: 0.34544rem 0.625rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625rem;
-    border-radius: 6.25rem;
-    background: #fff;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
-  .nav-signup {
-    display: flex;
-    padding: 0.34544rem 0.625rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.43175rem;
-    border-radius: 6.25rem;
-    border: 1px solid #fff;
-    cursor: pointer;
   }
   .hamburger {
     display: flex;
@@ -151,9 +124,6 @@
   .picfiestamobileLogo {
     display: flex;
   }
-  .nav-links {
-    display: none;
-  }
   .logoText {
     display: none;
   }
@@ -161,30 +131,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .nav-login {
-    display: flex;
-    width: 3.5625rem;
-    padding: 0.34544rem 0.625rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625rem;
-    border-radius: 6.25rem;
-    background: #fff;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
-  .nav-signup {
-    display: flex;
-    padding: 0.34544rem 0.625rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.43175rem;
-    border-radius: 6.25rem;
-    border: 1px solid #fff;
-    cursor: pointer;
-  }
-  .hamburger {
-    display: flex;
   }
 }
