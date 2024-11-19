@@ -8,7 +8,13 @@ import {
 
 const AppFooter = () => {
   return (
-    <footer style={{ backgroundColor: "#f8f9fa", padding: "40px 20px" }}>
+    <footer
+      style={{
+        backgroundColor: "#f8f9fa",
+        padding: "40px 20px",
+        marginTop: "2rem",
+      }}
+    >
       <div
         style={{
           display: "flex",
