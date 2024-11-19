@@ -5,9 +5,10 @@ import useAxios from "../../CustomHooks/useAxios";
 import Loader from "../../Components/Loader/Loader";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
 import { Outlet, useLocation } from "react-router-dom";
-const ReactMasonry = React.lazy(() =>
-  import("../../Components/ReactMasonry/ReactMasonry")
-);
+import ReactMasonry from "../../Components/ReactMasonry/ReactMasonry";
+// const ReactMasonry = React.lazy(() =>
+//   import("../../Components/ReactMasonry/ReactMasonry")
+// );
 
 const Home = () => {
   const location = useLocation();
@@ -48,10 +49,10 @@ const Home = () => {
       <MyHero heroDetails={heroDetails} />
       <NavLinks />
       {isHome ? (
-        <Suspense fallback={<Loader />}>
-          <ReactMasonry data={data} loading={loading} error={error} />
-        </Suspense>
+        // <Suspense fallback={<Loader />}>
+        <ReactMasonry data={data} loading={loading} error={error} />
       ) : (
+        // </Suspense>
         <Outlet />
       )}
     </>
