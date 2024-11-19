@@ -1,7 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import MyHero from "../../Components/MyHero/MyHero";
 import "./Vectors.css";
-import NavLinks from "../../Components/NavLinks/NavLinks";
 import useAxios from "../../CustomHooks/useAxios";
 import Loader from "../../Components/Loader/Loader";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
@@ -35,16 +33,8 @@ const Vectors = () => {
     return () => window.removeEventListener("scroll", handelInfiniteScroll);
   }, []);
 
-  const heroDetails = {
-    title: "Stunning free vector art stock images",
-    description:
-      "Over 140,000+ free vector art images shared by our talented community.",
-    images: [data[11]?.largeImageURL],
-  };
   return (
     <>
-      <MyHero heroDetails={heroDetails} />
-      <NavLinks />
       <Suspense fallback={<Loader />}>
         <ReactMasonry data={data} loading={loading} error={error} />
       </Suspense>
