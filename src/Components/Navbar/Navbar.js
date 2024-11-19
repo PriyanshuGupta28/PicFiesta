@@ -50,7 +50,6 @@ const Navbar = () => {
 
       {/* Drawer Component */}
       <Drawer
-        title="Menu"
         placement="right"
         closeIcon={
           <Hamburger
