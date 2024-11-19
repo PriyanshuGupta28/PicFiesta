@@ -12,7 +12,7 @@ const ReactMasonry = React.lazy(() =>
 
 const Illustrations = () => {
   const [page, setPage] = useState(1);
-  const { data, loading, error, response } = useAxios(
+  const { data, loading, error } = useAxios(
     `https://pixabay.com/api/?key=${pixabayKey}&q=iphone+Wallpapers&image_type=illustration&editors_choice=true$&per_page=20&page=${page}`
   );
 
@@ -33,13 +33,6 @@ const Illustrations = () => {
     window.addEventListener("scroll", handelInfiniteScroll);
     return () => window.removeEventListener("scroll", handelInfiniteScroll);
   }, []);
-
-  const heroDetails = {
-    title: "Free illustrations for download & inspiration",
-    description:
-      "Over 630,000+ beautiful free illustrations shared by our talented community.",
-    images: [data[11]?.largeImageURL],
-  };
   return (
     <>
       <Suspense fallback={<Loader />}>
