@@ -4,12 +4,13 @@ import NavLinks from "../../Components/NavLinks/NavLinks";
 import useAxios from "../../CustomHooks/useAxios";
 import Loader from "../../Components/Loader/Loader";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 const ReactMasonry = React.lazy(() =>
   import("../../Components/ReactMasonry/ReactMasonry")
 );
 
 const Home = () => {
+  const location = useLocation();
   const [page, setPage] = useState(1);
 
   const { data, loading, error } = useAxios(
@@ -41,14 +42,18 @@ const Home = () => {
       "We Provide Millions of high quality Stocks, Background, Illustrations and Much More.",
     images: [data[11]?.largeImageURL],
   };
+  const isHome = location.pathname === "/";
   return (
     <>
       <MyHero heroDetails={heroDetails} />
       <NavLinks />
-      <Suspense fallback={<Loader />}>
-        <ReactMasonry data={data} loading={loading} error={error} />
-      </Suspense>
-      <Outlet />
+      {isHome ? (
+        <Suspense fallback={<Loader />}>
+          <ReactMasonry data={data} loading={loading} error={error} />
+        </Suspense>
+      ) : (
+        <Outlet />
+      )}
     </>
   );
 };
