@@ -1,4 +1,3 @@
-import { UserButton, useAuth } from "@clerk/clerk-react";
 import Hamburger from "hamburger-react";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,13 +7,11 @@ import picfiestamobileLogo from "../../Images/picfiestamobileLogo.png";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { isSignedIn } = useAuth();
-  const [isOpen, setOpen] = useState(false); // For hamburger state
-  const [isDrawerOpen, setDrawerOpen] = useState(false); // For drawer state
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
 
   const toggleDrawer = () => {
-    setDrawerOpen(!isDrawerOpen); // Toggle drawer open/close
+    setDrawerOpen(!isDrawerOpen);
   };
 
   return (
@@ -44,8 +41,8 @@ const Navbar = () => {
 
         <div className="hamburger">
           <Hamburger
-            toggled={isOpen}
-            toggle={setOpen}
+            toggled={isDrawerOpen}
+            toggle={setDrawerOpen}
             onToggle={toggleDrawer}
           />
         </div>
@@ -57,28 +54,31 @@ const Navbar = () => {
         placement="right"
         closeIcon={
           <Hamburger
-            toggled={isOpen}
-            toggle={setOpen}
+            toggled={isDrawerOpen}
+            toggle={setDrawerOpen}
             onToggle={toggleDrawer}
           />
         }
         onClose={toggleDrawer}
         open={isDrawerOpen}
       >
-        <div>
-          <Link to="/trending" onClick={toggleDrawer}>
-            Trending This Week
-          </Link>
-        </div>
-        <div>
-          <Link to="/editors-pics" onClick={toggleDrawer}>
-            Editor’s Pics
-          </Link>
-        </div>
-        <div>
-          <Link to="/explore-themes" onClick={toggleDrawer}>
-            Explore By Theme
-          </Link>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            gap: "1rem",
+            paddingLeft: "1rem",
+          }}
+        >
+          {navLinks?.map((e, i) => (
+            <div key={i}>
+              <Link to={e?.link} onClick={toggleDrawer}>
+                {e?.title}
+              </Link>
+            </div>
+          ))}
         </div>
       </Drawer>
     </div>
@@ -86,3 +86,54 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const navLinks = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Photos",
+    link: "/photos",
+  },
+  {
+    title: "Illustrations",
+    link: "/illustrations",
+  },
+  {
+    title: "Vectors",
+    link: "/vectors",
+  },
+  {
+    title: "Videos",
+    link: "/videos",
+  },
+  {
+    title: "Contact Us",
+    link: "/contactus",
+  },
+  {
+    title: "Login",
+    link: "/login",
+  },
+  {
+    title: "Signup",
+    link: "/signup",
+  },
+  {
+    title: "Search",
+    link: "/search",
+  },
+  {
+    title: "Trending This Week",
+    link: "/trending",
+  },
+  {
+    title: "Editor's Pics",
+    link: "/editors-pics",
+  },
+  {
+    title: "Explore By Theme",
+    link: "/explore-themes",
+  },
+];
