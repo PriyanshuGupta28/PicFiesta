@@ -5,6 +5,7 @@ import useAxios from "../../CustomHooks/useAxios";
 import Loader from "../../Components/Loader/Loader";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
 import { Outlet, useLocation } from "react-router-dom";
+import Seo from "../../Components/Seo/Seo";
 const ReactMasonry = React.lazy(() =>
   import("../../Components/ReactMasonry/ReactMasonry")
 );
@@ -48,9 +49,20 @@ const Home = () => {
       <NavLinks />
       <div style={{ marginTop: "1rem" }}>
         {isHome ? (
-          <Suspense fallback={<Loader />}>
-            <ReactMasonry data={data} loading={loading} error={error} />
-          </Suspense>
+          <>
+            <Seo
+              title="Picfiesta | Discover Stunning Images and Photos"
+              description="Explore a vast collection of high-quality images, illustrations, and vectors on Picfiesta. Your go-to destination for creative inspiration!"
+              keywords="Picfiesta, image gallery, free images, photos, illustrations, vectors"
+              canonicalUrl="https://www.Picfiesta.com/"
+              ogTitle="Picfiesta | Discover Stunning Images"
+              ogDescription="Browse Picfiesta's extensive library of creative content, including photos, illustrations, and vectors."
+              ogImage="https://www.Picfiesta.com/assets/og-home.png"
+            />
+            <Suspense fallback={<Loader />}>
+              <ReactMasonry data={data} loading={loading} error={error} />
+            </Suspense>
+          </>
         ) : (
           <Outlet />
         )}
