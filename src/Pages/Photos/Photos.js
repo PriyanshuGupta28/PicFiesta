@@ -1,11 +1,10 @@
 import React, { Suspense, useEffect, useState } from "react";
-import MyHero from "../../Components/MyHero/MyHero";
 import "./Photos.css";
-import NavLinks from "../../Components/NavLinks/NavLinks";
 import ReactMasonry from "../../Components/ReactMasonry/ReactMasonry";
 import Loader from "../../Components/Loader/Loader";
 import useAxios from "../../CustomHooks/useAxios";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
+import Seo from "../../Components/Seo/Seo";
 
 const Photos = () => {
   const [page, setPage] = useState(1);
@@ -30,16 +29,19 @@ const Photos = () => {
     window.addEventListener("scroll", handelInfiniteScroll);
     return () => window.removeEventListener("scroll", handelInfiniteScroll);
   }, []);
-  const heroDetails = {
-    title: "Stunning free stock photos for download",
-    description:
-      "Over 3.7 million+ royalty-free stock photos shared by our talented community.",
-    images: [data[11]?.largeImageURL],
-  };
+
   return (
     <>
-      {/* <MyHero heroDetails={heroDetails} /> */}
-      {/* <NavLinks /> */}
+      <Seo
+        title="Picfiest | Photos - Beautiful Free Photos"
+        description="Browse beautiful free photos on Picfiest. Find the perfect image for your project from our diverse collection."
+        keywords="free photos, high-quality photos, Picfiest photos, image gallery"
+        canonicalUrl="https://www.picfiest.com/photos"
+        ogTitle="Photos | Picfiest"
+        ogDescription="Explore our curated collection of free photos on Picfiest."
+        ogImage="https://www.picfiest.com/assets/og-photos.png"
+      />
+
       <Suspense fallback={<Loader />}>
         <ReactMasonry data={data} loading={loading} error={error} />
       </Suspense>
