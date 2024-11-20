@@ -119,24 +119,8 @@ const navLinks = [
     link: "/vectors",
   },
   {
-    title: "Videos",
-    link: "/videos",
-  },
-  {
     title: "Contact Us",
     link: "/contactus",
-  },
-  {
-    title: "Login",
-    link: "/login",
-  },
-  {
-    title: "Signup",
-    link: "/signup",
-  },
-  {
-    title: "Search",
-    link: "/search",
   },
   {
     title: "Trending This Week",
@@ -144,10 +128,10 @@ const navLinks = [
   },
   {
     title: "Editor's Pics",
-    link: "/editors-pics",
+    link: "/editor",
   },
   {
     title: "Explore By Theme",
-    link: "/explore-themes",
+    link: "/explore",
   },
 ];
