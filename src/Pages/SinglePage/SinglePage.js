@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Card, Avatar, Tag, Button, Spin, Row, Col, Carousel } from "antd";
+import { Card, Avatar, Tag, Button, Spin, Row, Col } from "antd";
 import {
   DownloadOutlined,
   EyeOutlined,
@@ -36,8 +36,8 @@ const SinglePage = () => {
 
   if (loading) {
     return (
-      <div className="spinner">
-        <Spin size="large" />
+      <div className="spinner" style={{ paddingTop: "5rem" }}>
+        <Spin size="large" style={{ display: "block", margin: "2rem auto" }} />
       </div>
     );
   }
