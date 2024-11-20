@@ -5,6 +5,7 @@ import {
   InstagramOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const AppFooter = () => {
   return (
@@ -40,24 +41,36 @@ const AppFooter = () => {
             style={{ listStyle: "none", padding: 0, margin: 0, color: "#555" }}
           >
             <li>
-              <a href="/about" style={{ color: "inherit" }}>
+              <Link
+                to="/about"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/explore" style={{ color: "inherit" }}>
-                Explore
-              </a>
+              <Link
+                to="/editor"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                Editor’s Pics
+              </Link>
             </li>
             <li>
-              <a href="/blog" style={{ color: "inherit" }}>
-                Blog
-              </a>
+              <Link
+                to="/trending"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                Trending This Week
+              </Link>
             </li>
             <li>
-              <a href="/contact" style={{ color: "inherit" }}>
-                Contact
-              </a>
+              <Link
+                to="/explore"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                Explore By Theme
+              </Link>
             </li>
           </ul>
         </div>
@@ -69,24 +82,40 @@ const AppFooter = () => {
             style={{ listStyle: "none", padding: 0, margin: 0, color: "#555" }}
           >
             <li>
-              <a href="/licenses" style={{ color: "inherit" }}>
+              <Link
+                to="https://pixabay.com/service/license-summary/"
+                target="_blank"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
                 Licenses
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/api" style={{ color: "inherit" }}>
+              <Link
+                to="https://pixabay.com/service/about/api/"
+                target="_blank"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
                 API
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/terms" style={{ color: "inherit" }}>
+              <Link
+                to="https://pixabay.com/service/terms/"
+                target="_blank"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
                 Terms of Service
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy" style={{ color: "inherit" }}>
+              <Link
+                to="https://pixabay.com/service/privacy/"
+                target="_blank"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
