@@ -268,13 +268,21 @@ const ImageGallery = () => {
       </div>
 
       {/* Pagination */}
-      <Pagination
-        current={pagination.current}
-        pageSize={pagination.pageSize}
-        total={totalHits}
-        onChange={onPageChange}
-        style={{ marginTop: "1rem", textAlign: "center" }}
-      />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Pagination
+          current={pagination.current}
+          pageSize={pagination.pageSize}
+          total={totalHits}
+          onChange={onPageChange}
+          style={{ marginTop: "1rem", textAlign: "center" }}
+        />
+      </div>
     </div>
   );
 };
