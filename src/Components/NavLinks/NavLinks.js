@@ -99,18 +99,17 @@ const NavLinks = () => {
           </Link>
         </div>
       ))}
-      <div className="filter" onClick={toggleDrawer}>
+      {/* <div className="filter" onClick={toggleDrawer}>
         Filter
         <IoSettingsOutline />
-      </div>
-      <Drawer
+      </div> */}
+      {/* <Drawer
         placement="right"
         closable={true}
         onClose={toggleDrawer}
         open={drawerVisible}
       >
         <Form layout="vertical">
-          {/* Orientation */}
           <Form.Item label="Orientation">
             <Radio.Group
               value={filters.orientation}
@@ -124,7 +123,6 @@ const NavLinks = () => {
             </Radio.Group>
           </Form.Item>
 
-          {/* Image Type */}
           <Form.Item label="Image Type">
             <Select
               value={filters.imageType}
@@ -137,7 +135,6 @@ const NavLinks = () => {
             </Select>
           </Form.Item>
 
-          {/* Category */}
           <Form.Item label="Category">
             <Select
               value={filters.category}
@@ -159,7 +156,6 @@ const NavLinks = () => {
             </Select>
           </Form.Item>
 
-          {/* Order */}
           <Form.Item label="Order">
             <Radio.Group
               value={filters.order}
@@ -170,7 +166,6 @@ const NavLinks = () => {
             </Radio.Group>
           </Form.Item>
 
-          {/* Editor's Choice */}
           <Form.Item>
             <Checkbox
               checked={filters.editorsChoice}
@@ -186,7 +181,7 @@ const NavLinks = () => {
             Apply Filters
           </Button>
         </Form>
-      </Drawer>
+      </Drawer> */}
     </div>
   );
 };
