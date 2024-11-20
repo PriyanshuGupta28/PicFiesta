@@ -15,8 +15,9 @@ const helmetContext = {};
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <HelmetProvider context={helmetContext}></HelmetProvider>
-      <App />
+      <HelmetProvider context={helmetContext}>
+        <App />
+      </HelmetProvider>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
