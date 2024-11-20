@@ -11,6 +11,9 @@ import SinglePage from "../../Pages/SinglePage/SinglePage";
 import Vectors from "../../Pages/Vectors/Vectors";
 import Videos from "../../Pages/Videos/Videos";
 import SearchPage from "../../Pages/SearchPage/SearchPage";
+import ExploreByTheme from "../../Pages/ExploreByTheme/ExploreByTheme";
+import EditorPics from "../../Pages/EditorPics/EditorPics";
+import TrandingThisWeek from "../../Pages/TrendingThisWeek/TrendingThisWeek";
 
 const AllRoutes = () => {
   const location = useLocation();
@@ -29,6 +32,9 @@ const AllRoutes = () => {
         <Route path="/all" element={<SearchPage />}>
           <Route path="search" element={<SearchPage />} />
         </Route>
+        <Route path="/explore" element={<ExploreByTheme />} />
+        <Route path="/editor" element={<EditorPics />} />
+        <Route path="/trending" element={<TrandingThisWeek />} />
         {/* Routes for search pages */}
         <Route path="/photos/search" element={<SearchPage />} />
         <Route path="/illustrations/search" element={<SearchPage />} />
