@@ -24,7 +24,7 @@ const AllRoutes = () => {
           <Route exact path="photos" element={<Photos />} />
           <Route exact path="illustrations" element={<Illustrations />} />
           <Route exact path="vectors" element={<Vectors />} />
-          <Route exact path="videos" element={<Videos />} />
+          {/* <Route exact path="videos" element={<Videos />} /> */}
         </Route>
         <Route path="/contactus" element={<Contactus />} />
         <Route exact path="/login" element={<Login />} />
@@ -39,13 +39,13 @@ const AllRoutes = () => {
         <Route path="/photos/search" element={<SearchPage />} />
         <Route path="/illustrations/search" element={<SearchPage />} />
         <Route path="/vectors/search" element={<SearchPage />} />
-        <Route path="/videos/search" element={<SearchPage />} />
+        {/* <Route path="/videos/search" element={<SearchPage />} /> */}
         {/* Routes for single pages */}
         <Route exact path="/all/:id" element={<SinglePage />} />
         <Route exact path="/photos/:id" element={<SinglePage />} />
         <Route exact path="/illustrations/:id" element={<SinglePage />} />
         <Route exact path="/vectors/:id" element={<SinglePage />} />
-        <Route exact path="/videos/:id" element={<Videos />} />
+        {/* <Route exact path="/videos/:id" element={<Videos />} /> */}
         {/* Routes for single pages under search */}
         <Route path="/all/search/:id" element={<SinglePage />} />
         <Route exact path="photos/search/:id" element={<SinglePage />} />
