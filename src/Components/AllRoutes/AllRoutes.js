@@ -9,7 +9,6 @@ import Photos from "../../Pages/Photos/Photos";
 import Signup from "../../Pages/Signup/Signup";
 import SinglePage from "../../Pages/SinglePage/SinglePage";
 import Vectors from "../../Pages/Vectors/Vectors";
-import Videos from "../../Pages/Videos/Videos";
 import SearchPage from "../../Pages/SearchPage/SearchPage";
 import ExploreByTheme from "../../Pages/ExploreByTheme/ExploreByTheme";
 import EditorPics from "../../Pages/EditorPics/EditorPics";
@@ -21,7 +20,6 @@ const AllRoutes = () => {
     const location = useLocation();
 
     useEffect(() => {
-      // Smoothly scroll to the top of the page whenever the route changes
       restoreScroll(0, 0);
     }, [location]);
 
