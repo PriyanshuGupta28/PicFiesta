@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Contactus from "../../Pages/Contactus/Contactus";
 import Home from "../../Pages/Home/Home";
@@ -17,8 +17,19 @@ import TrandingThisWeek from "../../Pages/TrendingThisWeek/TrendingThisWeek";
 
 const AllRoutes = () => {
   const location = useLocation();
+  const ScrollRestoration = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+      // Smoothly scroll to the top of the page whenever the route changes
+      restoreScroll(0, 0);
+    }, [location]);
+
+    return null;
+  };
   return (
     <>
+      <ScrollRestoration />
       <Routes location={location} key={location?.pathname}>
         <Route path="/" element={<Home />}>
           <Route exact path="photos" element={<Photos />} />
@@ -62,3 +73,11 @@ const AllRoutes = () => {
 };
 
 export default AllRoutes;
+
+const restoreScroll = (x = 0, y = 0) => {
+  window.scrollTo({
+    top: y,
+    left: x,
+    behavior: "smooth",
+  });
+};
