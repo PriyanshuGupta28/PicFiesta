@@ -34,9 +34,11 @@ const Navbar = () => {
         </div>
 
         <div className="nav-links">
-          <div>Trending This Week</div>
-          <div>Editor’s Pics</div>
-          <div>Explore By Theme</div>
+          <div>
+            <Link to={"/trending"}>Trending This Week</Link>
+          </div>
+          <Link to={"/editor"}>Editor’s Pics</Link>
+          <Link to={"/explore"}>Explore By Theme</Link>
         </div>
 
         <div className="hamburger">
