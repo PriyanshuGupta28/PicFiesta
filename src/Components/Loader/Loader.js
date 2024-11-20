@@ -4,113 +4,113 @@ import "./Loader.css";
 const Loader = () => {
   return (
     <>
-      <div class="scene">
-        <div class="forest">
-          <div class="tree tree1">
-            <div class="branch branch-top"></div>
-            <div class="branch branch-middle"></div>
+      <div className="scene">
+        <div className="forest">
+          <div className="tree tree1">
+            <div className="branch branch-top"></div>
+            <div className="branch branch-middle"></div>
           </div>
 
-          <div class="tree tree2">
-            <div class="branch branch-top"></div>
-            <div class="branch branch-middle"></div>
-            <div class="branch branch-bottom"></div>
+          <div className="tree tree2">
+            <div className="branch branch-top"></div>
+            <div className="branch branch-middle"></div>
+            <div className="branch branch-bottom"></div>
           </div>
 
-          <div class="tree tree3">
-            <div class="branch branch-top"></div>
-            <div class="branch branch-middle"></div>
-            <div class="branch branch-bottom"></div>
+          <div className="tree tree3">
+            <div className="branch branch-top"></div>
+            <div className="branch branch-middle"></div>
+            <div className="branch branch-bottom"></div>
           </div>
 
-          <div class="tree tree4">
-            <div class="branch branch-top"></div>
-            <div class="branch branch-middle"></div>
-            <div class="branch branch-bottom"></div>
+          <div className="tree tree4">
+            <div className="branch branch-top"></div>
+            <div className="branch branch-middle"></div>
+            <div className="branch branch-bottom"></div>
           </div>
 
-          <div class="tree tree5">
-            <div class="branch branch-top"></div>
-            <div class="branch branch-middle"></div>
-            <div class="branch branch-bottom"></div>
+          <div className="tree tree5">
+            <div className="branch branch-top"></div>
+            <div className="branch branch-middle"></div>
+            <div className="branch branch-bottom"></div>
           </div>
 
-          <div class="tree tree6">
-            <div class="branch branch-top"></div>
-            <div class="branch branch-middle"></div>
-            <div class="branch branch-bottom"></div>
+          <div className="tree tree6">
+            <div className="branch branch-top"></div>
+            <div className="branch branch-middle"></div>
+            <div className="branch branch-bottom"></div>
           </div>
 
-          <div class="tree tree7">
-            <div class="branch branch-top"></div>
-            <div class="branch branch-middle"></div>
-            <div class="branch branch-bottom"></div>
-          </div>
-        </div>
-
-        <div class="tent">
-          <div class="roof"></div>
-          <div class="roof-border-left">
-            <div class="roof-border roof-border1"></div>
-            <div class="roof-border roof-border2"></div>
-            <div class="roof-border roof-border3"></div>
-          </div>
-          <div class="entrance">
-            <div class="door left-door">
-              <div class="left-door-inner"></div>
-            </div>
-            <div class="door right-door">
-              <div class="right-door-inner"></div>
-            </div>
+          <div className="tree tree7">
+            <div className="branch branch-top"></div>
+            <div className="branch branch-middle"></div>
+            <div className="branch branch-bottom"></div>
           </div>
         </div>
 
-        <div class="floor">
-          <div class="ground ground1"></div>
-          <div class="ground ground2"></div>
-        </div>
-
-        <div class="fireplace">
-          <div class="support"></div>
-          <div class="support"></div>
-          <div class="bar"></div>
-          <div class="hanger"></div>
-          <div class="smoke"></div>
-          <div class="pan"></div>
-          <div class="fire">
-            <div class="line line1">
-              <div class="particle particle1"></div>
-              <div class="particle particle2"></div>
-              <div class="particle particle3"></div>
-              <div class="particle particle4"></div>
+        <div className="tent">
+          <div className="roof"></div>
+          <div className="roof-border-left">
+            <div className="roof-border roof-border1"></div>
+            <div className="roof-border roof-border2"></div>
+            <div className="roof-border roof-border3"></div>
+          </div>
+          <div className="entrance">
+            <div className="door left-door">
+              <div className="left-door-inner"></div>
             </div>
-            <div class="line line2">
-              <div class="particle particle1"></div>
-              <div class="particle particle2"></div>
-              <div class="particle particle3"></div>
-              <div class="particle particle4"></div>
-            </div>
-            <div class="line line3">
-              <div class="particle particle1"></div>
-              <div class="particle particle2"></div>
-              <div class="particle particle3"></div>
-              <div class="particle particle4"></div>
+            <div className="door right-door">
+              <div className="right-door-inner"></div>
             </div>
           </div>
         </div>
 
-        <div class="time-wrapper">
-          <div class="time">
-            <div class="day"></div>
-            <div class="night">
-              <div class="moon"></div>
-              <div class="star star1 star-big"></div>
-              <div class="star star2 star-big"></div>
-              <div class="star star3 star-big"></div>
-              <div class="star star4"></div>
-              <div class="star star5"></div>
-              <div class="star star6"></div>
-              <div class="star star7"></div>
+        <div className="floor">
+          <div className="ground ground1"></div>
+          <div className="ground ground2"></div>
+        </div>
+
+        <div className="fireplace">
+          <div className="support"></div>
+          <div className="support"></div>
+          <div className="bar"></div>
+          <div className="hanger"></div>
+          <div className="smoke"></div>
+          <div className="pan"></div>
+          <div className="fire">
+            <div className="line line1">
+              <div className="particle particle1"></div>
+              <div className="particle particle2"></div>
+              <div className="particle particle3"></div>
+              <div className="particle particle4"></div>
+            </div>
+            <div className="line line2">
+              <div className="particle particle1"></div>
+              <div className="particle particle2"></div>
+              <div className="particle particle3"></div>
+              <div className="particle particle4"></div>
+            </div>
+            <div className="line line3">
+              <div className="particle particle1"></div>
+              <div className="particle particle2"></div>
+              <div className="particle particle3"></div>
+              <div className="particle particle4"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="time-wrapper">
+          <div className="time">
+            <div className="day"></div>
+            <div className="night">
+              <div className="moon"></div>
+              <div className="star star1 star-big"></div>
+              <div className="star star2 star-big"></div>
+              <div className="star star3 star-big"></div>
+              <div className="star star4"></div>
+              <div className="star star5"></div>
+              <div className="star star6"></div>
+              <div className="star star7"></div>
             </div>
           </div>
         </div>
