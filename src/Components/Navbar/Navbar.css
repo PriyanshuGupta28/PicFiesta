@@ -43,7 +43,10 @@
 .last-nav {
   margin-right: 1rem;
 }
-
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
 .logo {
   width: 2.63044rem;
   height: 2.63044rem;
