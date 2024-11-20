@@ -41,7 +41,28 @@ const ImageGallery = () => {
     pageSize: 20,
   });
 
-  const categories = ["Nature", "Animals", "Technology", "People", "Food"];
+  const categories = [
+    "backgrounds",
+    "fashion",
+    "nature",
+    "science",
+    "education",
+    "feelings",
+    "health",
+    "people",
+    "religion",
+    "places",
+    "animals",
+    "industry",
+    "computer",
+    "food",
+    "sports",
+    "transportation",
+    "travel",
+    "buildings",
+    "business",
+    "music",
+  ];
 
   const toggleDrawer = () => {
     setDrawerVisible(!drawerVisible);
@@ -112,7 +133,6 @@ const ImageGallery = () => {
     }
   };
 
-  // const onSearch = (value, _e, info) => console.log(info?.source, value);
   return (
     <div style={{ padding: "1rem", paddingTop: "5rem" }}>
       <div
