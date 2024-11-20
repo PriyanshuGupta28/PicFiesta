@@ -15,6 +15,7 @@ import { useSearchParams } from "react-router-dom";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
 import { Input } from "antd";
 import SingleImage from "../../Components/SingleImage/SingleImage";
+import Seo from "../../Components/Seo/Seo";
 
 const { Search } = Input;
 
@@ -133,12 +134,23 @@ const ExploreByTheme = () => {
 
   return (
     <div style={{ padding: "1rem", paddingTop: "5rem" }}>
+      <Seo
+        title="Picfiesta | Explore By Theme - Themed Image Collections"
+        description="Dive into themed image collections on Picfiesta. Browse by themes like nature, technology, travel, and more."
+        keywords="explore by theme, themed images, Picfiesta themes, image collections"
+        canonicalUrl="https://www.Picfiesta.com/explore-by-theme"
+        ogTitle="Explore By Theme | Picfiesta"
+        ogDescription="Find themed image collections to match your creative needs on Picfiesta."
+        ogImage="https://www.Picfiesta.com/assets/og-explore-by-theme.png"
+      />
+
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           gap: "2rem",
         }}
+        ss
       >
         <Search
           placeholder="input search text"
