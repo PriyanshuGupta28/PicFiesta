@@ -15,6 +15,7 @@ import { useSearchParams } from "react-router-dom";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
 import { Input, Space } from "antd";
 import SingleImage from "../../Components/SingleImage/SingleImage";
+import Seo from "../../Components/Seo/Seo";
 
 const { Search } = Input;
 
@@ -137,6 +138,16 @@ const EditorPics = () => {
 
   return (
     <div style={{ padding: "1rem", paddingTop: "5rem" }}>
+      <Seo
+        title="Picfiesta | Editor's Picks - Curated Best Images"
+        description="Explore a handpicked collection of the best images on Picfiesta, curated by our editors."
+        keywords="editor's picks, curated images, best images, Picfiesta picks"
+        canonicalUrl="https://www.Picfiesta.com/editors-picks"
+        ogTitle="Editor's Picks | Picfiesta"
+        ogDescription="Discover the best images curated by our editors on Picfiesta."
+        ogImage="https://www.Picfiesta.com/assets/og-editors-picks.png"
+      />
+
       <div
         style={{
           display: "flex",
