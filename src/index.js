@@ -9,11 +9,13 @@ import { applyMiddleware, compose, createStore } from "redux";
 import { thunk } from "redux-thunk";
 import { reducer } from "./Redux/reducer";
 import { Provider } from "react-redux";
+import { HelmetProvider } from "react-helmet-async";
 const store = createStore(reducer, compose(applyMiddleware(thunk)));
-
+const helmetContext = {};
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
+      <HelmetProvider context={helmetContext}></HelmetProvider>
       <App />
     </BrowserRouter>
   </Provider>,
