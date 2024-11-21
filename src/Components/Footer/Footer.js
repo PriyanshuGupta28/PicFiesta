@@ -28,7 +28,7 @@ const AppFooter = () => {
       >
         {/* Logo and Tagline */}
         <div style={{ flex: "1 1 250px", minWidth: "200px" }}>
-          <h2 style={{ color: "#333", fontWeight: "bold" }}>MyWebsite</h2>
+          <h2 style={{ color: "#333", fontWeight: "bold" }}>Picfiesta</h2>
           <p style={{ color: "#555" }}>
             Discover the world through stunning images.
           </p>
@@ -42,10 +42,18 @@ const AppFooter = () => {
           >
             <li>
               <Link
-                to="/about"
+                to="/about-us"
                 style={{ color: "inherit", textDecoration: "none" }}
               >
                 About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact-us"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                Contact us
               </Link>
             </li>
             <li>
@@ -125,28 +133,28 @@ const AppFooter = () => {
           <h3 style={{ color: "#333" }}>Follow Us</h3>
           <div style={{ fontSize: "1.5rem", display: "flex", gap: "10px" }}>
             <a
-              href="https://facebook.com"
+              href="https://www.linkedin.com/in/priyanshu-kumar-581a5a246"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FacebookOutlined />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/28Priyanshu2001"
               target="_blank"
               rel="noopener noreferrer"
             >
               <TwitterOutlined />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/28priyanshu2001/  "
               target="_blank"
               rel="noopener noreferrer"
             >
               <InstagramOutlined />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/PriyanshuGupta28"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -167,7 +175,7 @@ const AppFooter = () => {
 
       {/* Copyright */}
       <div style={{ textAlign: "center", color: "#888" }}>
-        &copy; {new Date().getFullYear()} MyWebsite. All rights reserved.
+        &copy; {new Date().getFullYear()} Picfiesta. All rights reserved.
       </div>
     </footer>
   );
