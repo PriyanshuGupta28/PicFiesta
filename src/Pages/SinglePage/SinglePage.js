@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import "./SinglePage.css";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
+import Seo from "../../Components/Seo/Seo";
 
 const { Meta } = Card;
 
@@ -48,6 +49,24 @@ const SinglePage = () => {
 
   return (
     <div className="single-page">
+      <Seo
+        title={`${data.user} | Picfiesta`}
+        description={`${
+          data?.tags[0] ||
+          "High-quality image available for free download on Picfiesta."
+        }`}
+        keywords={`${
+          data?.tags[0] || "free image, Picfiesta, high-quality image"
+        }`}
+        canonicalUrl="https://www.Picfiesta.com/image/{imageId}"
+        ogTitle={`${data.user}  | Picfiesta`}
+        ogDescription={
+          data?.tags[0] ||
+          "Download this stunning image from Picfiesta for free."
+        }
+        ogImage={data.largeImageURL}
+      />
+
       <Card
         hoverable
         style={{
