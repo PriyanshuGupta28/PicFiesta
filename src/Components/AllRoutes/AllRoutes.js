@@ -13,6 +13,7 @@ import SearchPage from "../../Pages/SearchPage/SearchPage";
 import ExploreByTheme from "../../Pages/ExploreByTheme/ExploreByTheme";
 import EditorPics from "../../Pages/EditorPics/EditorPics";
 import TrandingThisWeek from "../../Pages/TrendingThisWeek/TrendingThisWeek";
+import AboutUs from "../../Pages/AboutUs/AboutUs";
 
 const AllRoutes = () => {
   const location = useLocation();
@@ -35,7 +36,8 @@ const AllRoutes = () => {
           <Route exact path="vectors" element={<Vectors />} />
           {/* <Route exact path="videos" element={<Videos />} /> */}
         </Route>
-        <Route path="/contactus" element={<Contactus />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<Contactus />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route path="/all" element={<SearchPage />}>
