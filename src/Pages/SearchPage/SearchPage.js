@@ -15,6 +15,7 @@ import { useSearchParams } from "react-router-dom";
 import { pixabayKey } from "../../Utility/Utils/utilsFunctions";
 import { Input, Space } from "antd";
 import SingleImage from "../../Components/SingleImage/SingleImage";
+import Seo from "../../Components/Seo/Seo";
 
 const { Search } = Input;
 
@@ -135,6 +136,18 @@ const ImageGallery = () => {
 
   return (
     <div style={{ padding: "1rem", paddingTop: "5rem" }}>
+      <Seo
+        title={`Search Results for "${query}" | Picfiesta`}
+        description={`Browse images, photos, illustrations, and vectors related to "${query}" on Picfiesta. Find the perfect content for your creative needs.`}
+        keywords={`search results, ${query}, Picfiesta search, free images, photos, illustrations, vectors`}
+        canonicalUrl={`https://www.Picfiesta.com/search?q=${encodeURIComponent(
+          query
+        )}`}
+        ogTitle={`Search Results for "${query}" | Picfiesta`}
+        ogDescription={`Discover stunning images, illustrations, and vectors related to "${query}" on Picfiesta.`}
+        ogImage="https://www.Picfiestaa.vercel.app"
+      />
+
       <div
         style={{
           display: "flex",
