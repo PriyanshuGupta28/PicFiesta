@@ -118,10 +118,7 @@ const navLinks = [
     title: "Vectors",
     link: "/vectors",
   },
-  {
-    title: "Contact Us",
-    link: "/contactus",
-  },
+
   {
     title: "Trending This Week",
     link: "/trending",
@@ -133,5 +130,13 @@ const navLinks = [
   {
     title: "Explore By Theme",
     link: "/explore",
+  },
+  {
+    title: "Contact Us",
+    link: "/contact-us",
+  },
+  {
+    title: "About Us",
+    link: "/about-us",
   },
 ];
